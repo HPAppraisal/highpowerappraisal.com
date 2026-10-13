@@ -1,0 +1,1761 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="High Power Appraisal — independent residential appraisal in Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities, Nevada. Estate, divorce, tax appeal, pre-listing, purchase and refinance appraisals by a Nevada Licensed Residential Appraiser." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>High Power Appraisal — Las Vegas Residential Appraiser</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #232629;
+      --paper-2: #2c2f33;
+      --ink: #f0f2f3;
+      --muted: #b4bcc2;
+      --line: #494f55;
+      --card: #2e3136;
+      --navy: #dde3e7;
+      --navy-2: #f4f6f7;
+      --accent: #c9a24a;
+      --accent-deep: #e3bb66;
+      --accent-soft: #57481f;
+      --silver: #c3c9ce;
+      --silver-deep: #9aa3ab;
+      --black: #101214;
+      --cream: #2b2517;
+      --band: #17181b;
+      --shadow: 0 24px 60px rgba(0, 0, 0, .42);
+      --display: "Libre Baskerville", Georgia, serif;
+      --sans: "Public Sans", "Helvetica Neue", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #131517;
+        --paper-2: #1a1c1f;
+        --ink: #f1f4f6;
+        --muted: #aeb7be;
+        --line: #363b40;
+        --card: #1e2023;
+        --navy: #d3dbe0;
+        --navy-2: #eef2f4;
+        --accent: #d8aa50;
+        --accent-deep: #f0c46d;
+        --accent-soft: #4b3b20;
+        --silver: #c4ccd2;
+        --silver-deep: #9aa6ae;
+        --black: #050708;
+        --cream: #211d15;
+        --band: #0a0b0d;
+        --shadow: 0 24px 60px rgba(0, 0, 0, .5);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 14px;
+      top: 14px;
+      z-index: 50;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: var(--paper);
+      transform: translateY(-180%);
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-nav {
+      width: min(1160px, calc(100% - 40px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-context {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-size: .91rem;
+      font-weight: 700;
+    }
+    .nav-logo {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #080a0c;
+      box-shadow: 0 0 0 1px rgba(183, 134, 44, .42);
+    }
+    .nav-copy { display: grid; gap: 1px; line-height: 1.15; }
+    .nav-copy strong { color: var(--navy-2); font-family: var(--display); font-size: .92rem; }
+    .nav-copy span { color: var(--muted); font-size: .71rem; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
+    .nav-links a.button { color: #17130a; }
+    .nav-links a.button:hover, .nav-links a.button:focus-visible { color: #17130a; background: var(--accent-deep); }
+
+    main { min-height: 100vh; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(48px, 8vw, 108px) 0 36px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--silver-deep) 0 72%, var(--accent) 72% 100%);
+      z-index: 3;
+    }
+    .hero-backdrop {
+      position: absolute;
+      inset: 7px 0 auto;
+      height: 390px;
+      overflow: hidden;
+      opacity: .34;
+      pointer-events: none;
+      mask-image: linear-gradient(to bottom, #000, transparent);
+    }
+    .hero-backdrop img { width: 100%; height: 100%; object-fit: cover; object-position: center 72%; }
+    .hero-grid { position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+      gap: clamp(46px, 7vw, 92px);
+      align-items: center;
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--accent-deep);
+      font-size: .79rem;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -.025em; }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--navy-2);
+      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      line-height: .99;
+      font-weight: 400;
+    }
+    .hero-lede {
+      max-width: 610px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      line-height: 1.65;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #17130a;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .button:hover, .button:focus-visible { background: var(--accent-deep); }
+    .button.secondary {
+      border-color: var(--line);
+      background: transparent;
+      color: var(--navy-2);
+    }
+    .button.secondary:hover, .button.secondary:focus-visible {
+      border-color: var(--navy);
+      background: var(--card);
+    }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 600;
+    }
+    .trust-row span { display: inline-flex; align-items: center; gap: 8px; }
+    .trust-row span::before { content: ""; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .hero-visual { position: relative; padding: 0 0 76px 38px; }
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      min-height: 590px;
+      background: var(--paper-2);
+      box-shadow: var(--shadow);
+    }
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 6, 8, .02) 30%, rgba(5, 6, 8, .58) 100%);
+      pointer-events: none;
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 58% 58%; }
+    .photo-caption {
+      position: absolute;
+      right: 16px;
+      bottom: 12px;
+      z-index: 2;
+      color: rgba(255,255,255,.86);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 8px rgba(0,0,0,.85);
+    }
+    .brand-card {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      align-items: center;
+      width: min(390px, 86%);
+      padding: 13px;
+      background: #101214;
+      color: #f8fbfd;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .45);
+    }
+    .brand-card img { width: 118px; height: 118px; aspect-ratio: 1; object-fit: cover; }
+    .brand-card-copy { padding: 8px 16px; border-left: 1px solid rgba(216, 170, 80, .5); }
+    .brand-card strong { display: block; color: #e3bb66; font-family: var(--display); font-size: 1.12rem; line-height: 1.25; }
+    .brand-card span { display: block; margin-top: 6px; color: #cbd8e3; font-size: .78rem; line-height: 1.45; }
+    .cityline {
+      width: min(1160px, calc(100% - 40px));
+      height: 86px;
+      margin: 32px auto 0;
+      color: var(--navy);
+      opacity: .42;
+    }
+    .cityline svg { width: 100%; height: 100%; display: block; }
+
+    .transition-strip { background: var(--band); color: white; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .transition-strip .wrap {
+      display: grid;
+      grid-template-columns: minmax(190px, .62fr) minmax(0, 1.38fr);
+      gap: clamp(28px, 6vw, 78px);
+      align-items: center;
+      padding-block: 28px;
+    }
+    .transition-mark { display: flex; align-items: center; gap: 14px; }
+    .transition-motif { width: 58px; height: 58px; flex: 0 0 auto; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px rgba(227,187,102,.42); }
+    .transition-mark strong { color: #e3bb66; font-family: var(--display); font-size: 1.24rem; line-height: 1.25; }
+    .transition-strip p { margin: 0; color: #d3dfe8; font-size: .94rem; }
+
+    .section { padding: clamp(72px, 9vw, 118px) 0; }
+    .section-rule { border-top: 1px solid var(--line); }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr);
+      gap: clamp(36px, 7vw, 96px);
+      align-items: start;
+      margin-bottom: 46px;
+    }
+    h2 {
+      margin: 0;
+      color: var(--navy-2);
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: 1.14;
+      font-weight: 400;
+    }
+    .section-intro { margin: 2px 0 0; color: var(--muted); font-size: 1.08rem; max-width: 660px; }
+    .place-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      color: var(--accent-deep);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+    .place-tag::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+    .process-band .place-tag { color: #e3bb66; }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .audience-card { min-height: 225px; padding: 30px; background: var(--card); }
+    .audience-card .service-number { display: block; margin-bottom: 36px; color: var(--accent-deep); font-size: .78rem; font-weight: 700; letter-spacing: .09em; }
+    .audience-card h3 { margin: 0; color: var(--navy-2); font-size: 1.28rem; line-height: 1.35; }
+    .audience-card p { margin: 12px 0 0; color: var(--muted); }
+    .audience-card ul { margin: 16px 0 0; padding-left: 18px; color: var(--muted); font-size: .9rem; }
+    .audience-card li + li { margin-top: 5px; }
+
+    .credentials-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-2);
+    }
+    .credentials-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--paper-2) 0 34%, transparent 72%), url("assets/red-rock-dusk.webp") center / cover no-repeat;
+      opacity: .3;
+      pointer-events: none;
+    }
+    .credentials-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(46px, 8vw, 104px);
+      align-items: start;
+    }
+    .credential-summary {
+      position: sticky;
+      top: 28px;
+      border-top: 4px solid var(--accent);
+      padding-top: 22px;
+    }
+    .credential-summary h2 { font-size: clamp(2rem, 3.5vw, 3.25rem); }
+    .credential-summary p { margin: 18px 0 0; color: var(--muted); }
+    .readiness-panel {
+      display: grid;
+      grid-template-columns: minmax(150px, .7fr) minmax(0, 1.3fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 24px 26px;
+      background: var(--band);
+      color: white;
+    }
+    .readiness-panel strong { color: #e3bb66; font-family: var(--display); font-size: 1.32rem; line-height: 1.3; }
+    .readiness-panel p { margin: 0; color: #d3dfe8; font-size: .92rem; line-height: 1.6; }
+    .credential-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .credential-fact { min-height: 148px; padding: 24px; background: var(--card); }
+    .credential-fact b { display: block; color: var(--navy-2); font-family: var(--display); font-size: 1.15rem; line-height: 1.35; }
+    .credential-fact span { display: block; margin-top: 10px; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+    .training-list { margin-top: 30px; border-top: 1px solid var(--line); }
+    .training-row {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 18px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .training-row time { color: var(--accent-deep); font-size: .78rem; font-weight: 700; letter-spacing: .06em; }
+    .training-row p { margin: 0; color: var(--ink); font-size: .94rem; font-weight: 600; }
+    .training-row p span { color: var(--muted); font-weight: 400; }
+    .training-synopsis { margin-top: 34px; padding: 26px 28px; border: 1px solid var(--line); background: var(--card); }
+    .training-synopsis h3 { margin: 0; color: var(--navy-2); font-size: 1.25rem; line-height: 1.35; }
+    .training-synopsis p { margin: 12px 0 0; color: var(--muted); font-size: .95rem; line-height: 1.65; }
+    .packet-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 22px; }
+    .packet-note { margin: 14px 0 0; color: var(--muted); font-size: .86rem; }
+
+    .process-band {
+      position: relative;
+      overflow: hidden;
+      background: #101214;
+      color: #f5f8f7;
+    }
+    .process-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(8,9,11,.94), rgba(8,9,11,.78)), url("assets/valley-overview-dusk.webp") center / cover no-repeat;
+    }
+    .process-band::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -170px;
+      width: 410px;
+      height: 410px;
+      border: 1px solid rgba(216, 170, 80, .22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(216, 170, 80, .06), 0 0 0 72px rgba(216, 170, 80, .04);
+      pointer-events: none;
+    }
+    .process-band .wrap { position: relative; z-index: 1; }
+    .process-band .eyebrow { color: #e3bb66; }
+    .process-band h2 { color: #ffffff; }
+    .process-band .section-intro { color: #bdd0d3; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,.2);
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+    .step { padding: 34px 32px 36px 0; }
+    .step + .step { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.2); }
+    .step b { color: #e3bb66; font-size: .8rem; letter-spacing: .1em; }
+    .step h3 { margin: 42px 0 12px; color: white; font-size: 1.28rem; }
+    .step p { margin: 0; color: #bdd0d3; font-size: .94rem; }
+    .process-figure {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+      margin: 48px 0 0;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,.2);
+    }
+    .process-figure img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .42);
+    }
+    .process-figure figcaption { color: #bdd0d3; font-size: .96rem; line-height: 1.65; }
+    .process-figure figcaption strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-family: var(--display);
+      font-size: 1.35rem;
+      line-height: 1.3;
+      font-weight: 400;
+    }
+
+    .motif-rule {
+      display: grid;
+      grid-template-columns: 1fr 78px 1fr;
+      gap: 18px;
+      align-items: center;
+      width: min(540px, 86%);
+      margin: 42px auto 0;
+    }
+    .motif-rule::before, .motif-rule::after { content: ""; height: 1px; background: linear-gradient(90deg, transparent, var(--accent)); }
+    .motif-rule::after { transform: rotate(180deg); }
+    .motif-rule img { width: 78px; height: 78px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px rgba(183,134,44,.4); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+      gap: clamp(40px, 6vw, 72px);
+      align-items: start;
+    }
+    .about-visual {
+      position: relative;
+      padding: 6px 0 0;
+    }
+    .portrait-photo {
+      width: 100%;
+      max-width: 208px;
+      margin: 0;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--paper-2);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+    }
+    .portrait-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 34%; }
+    .portrait-caption { margin: 10px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .portrait-caption strong { display: block; color: var(--navy-2); font-size: .86rem; }
+    .avatar-figure { margin: 32px 0 0; }
+    .avatar-figure img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      background: var(--paper-2);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+    }
+    .avatar-figure figcaption { margin: 10px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .avatar-figure figcaption strong { display: block; color: var(--navy-2); font-size: .86rem; }
+    .since-chip {
+      position: absolute;
+      top: 14px;
+      left: -10px;
+      padding: 8px 10px;
+      border-top: 3px solid var(--accent);
+      background: var(--band);
+      color: white;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
+    }
+    .since-chip span { display: block; color: #cbd8e3; font-size: .6rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .since-chip strong { display: block; margin-top: 1px; color: #e3bb66; font-family: var(--display); font-size: 1.3rem; line-height: 1; font-weight: 400; }
+    .about-copy h2 { margin-bottom: 25px; }
+    .about-copy > p { color: var(--muted); font-size: 1.06rem; }
+    .about-copy > p + p { margin-top: 18px; }
+    .name-story {
+      margin-top: 30px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .name-story h3 { margin: 0; color: var(--navy-2); font-size: 1.3rem; }
+    .name-story p { margin: 10px 0 0; color: var(--muted); font-size: .97rem; }
+    .hometown-note {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-top: 3px solid var(--silver);
+      background: var(--black);
+      color: #eef1f3;
+    }
+    .hometown-note img { width: 68px; height: 68px; object-fit: cover; }
+    .hometown-note p { margin: 0; color: #d0d5d8; font-size: .88rem; line-height: 1.55; }
+    .hometown-note strong { color: #ffffff; }
+    .award-note {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      margin-top: 30px;
+      padding: 20px 22px;
+      border-top: 4px solid var(--accent);
+      background: var(--black);
+      color: #eef1f3;
+    }
+    .award-note img { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px rgba(227,187,102,.45); }
+    .award-kicker {
+      margin: 0;
+      color: #e3bb66;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .award-note h3 { margin: 5px 0 0; color: #ffffff; font-size: 1.32rem; line-height: 1.3; font-weight: 400; }
+    .award-note p.award-copy { margin: 8px 0 0; color: #cbd3d8; font-size: .92rem; line-height: 1.6; }
+    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 30px; margin-top: 30px; }
+    .about-point { display: flex; gap: 12px; align-items: flex-start; color: var(--ink); font-size: .93rem; font-weight: 600; }
+    .about-point svg { flex: 0 0 auto; color: var(--accent); margin-top: 3px; }
+
+    .reviews-band {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      background: #0d0f11;
+    }
+    .reviews-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(9, 10, 12, .9) 0%, rgba(9, 10, 12, .68) 52%, rgba(9, 10, 12, .42) 100%), url("assets/redrock-skyline-panorama.webp") center 64% / cover no-repeat;
+      pointer-events: none;
+    }
+    .reviews-band .wrap { position: relative; z-index: 1; }
+    .reviews-band .reviews-placeholder p { color: #c3ccd1; }
+    .reviews-band .place-tag { color: #e3bb66; }
+    .reviews-placeholder {
+      display: grid;
+      grid-template-columns: minmax(180px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(34px, 7vw, 92px);
+      align-items: center;
+      padding: 32px 0;
+      border-top: 4px solid var(--accent);
+      border-bottom: 1px solid var(--line);
+    }
+    .reviews-placeholder h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); }
+    .reviews-placeholder p { margin: 0; color: var(--muted); }
+
+    .quote-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-2);
+    }
+    .quote-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--paper-2) 0 36%, rgba(35,38,41,.74) 66%, rgba(35,38,41,.48)), url("assets/luxury-home-sunset.webp") center / cover no-repeat;
+      opacity: .3;
+      pointer-events: none;
+    }
+    .quote-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: clamp(48px, 8vw, 110px);
+      align-items: start;
+    }
+    .contact-copy h2 { margin-bottom: 22px; }
+    .contact-copy p { color: var(--muted); }
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .door-figure { margin: 34px 0 0; max-width: 320px; }
+    .door-figure img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .door-figure figcaption { margin: 10px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .door-figure figcaption strong { display: block; color: var(--navy-2); font-size: .86rem; }
+    .contact-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent-deep);
+      font-weight: 700;
+      text-underline-offset: 4px;
+      word-break: break-word;
+    }
+    .contact-link span {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .quote-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: clamp(24px, 4vw, 42px);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: var(--ink); font-size: .86rem; font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      padding: 11px 12px;
+      background: var(--paper);
+      color: var(--ink);
+      outline: none;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .form-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
+    .form-note { margin: 0; color: var(--muted); font-size: .78rem; flex: 1 1 230px; }
+    .form-status { grid-column: 1 / -1; margin: 0; color: var(--accent-deep); font-weight: 700; font-size: .88rem; min-height: 1.4em; }
+
+    footer { background: #07090b; color: #d7e2e4; border-top: 3px solid var(--silver); }
+    .footer-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 max(24px, env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      font-size: .8rem;
+    }
+    .footer-mark { width: 76px; height: 76px; object-fit: cover; }
+    .footer-copy { display: grid; gap: 4px; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { color: inherit; text-underline-offset: 3px; }
+
+    @media (prefers-color-scheme: dark) {
+      .quote-section::before { background: linear-gradient(90deg, var(--paper-2) 0 36%, rgba(19,21,23,.8) 66%, rgba(19,21,23,.58)), url("assets/luxury-home-sunset.webp") center / cover no-repeat; }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-grid, .transition-strip .wrap, .section-head, .credentials-grid, .about-grid, .reviews-placeholder, .quote-grid, .process-figure { grid-template-columns: 1fr; }
+      .door-figure { max-width: 400px; }
+      .hero { padding-top: 54px; }
+      .credential-summary { position: static; }
+      .hero-visual { max-width: 650px; padding-left: 28px; }
+      .about-visual { position: relative; top: auto; max-width: 520px; }
+      .photo-frame { aspect-ratio: 4 / 5; min-height: 0; }
+      .cityline { height: 68px; margin-top: 22px; }
+      .credentials-section::before, .quote-section::before { opacity: .2; }
+      .section-head { gap: 20px; }
+      .steps { grid-template-columns: 1fr; }
+      .step { padding: 28px 0; }
+      .step + .step { padding-left: 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.2); }
+      .step h3 { margin-top: 18px; }
+      .quote-grid { gap: 36px; }
+    }
+
+    @media (max-width: 600px) {
+      .site-nav, .wrap, .footer-inner { width: min(100% - 28px, 1160px); }
+      .site-nav { min-height: 62px; }
+      .nav-logo { width: 44px; height: 44px; }
+      .nav-copy span { display: none; }
+      .nav-copy strong { max-width: 124px; font-size: .82rem; }
+      .nav-cta { padding: 9px 11px; font-size: .78rem !important; }
+      h1 { font-size: clamp(2.65rem, 13vw, 4rem); }
+      .hero-lede { margin-top: 22px; }
+      .hero-actions .button { width: 100%; }
+      .hero-visual { padding-left: 0; padding-bottom: 82px; }
+      .photo-frame { aspect-ratio: 4 / 5; }
+      .brand-card { width: calc(100% - 16px); grid-template-columns: 96px minmax(0, 1fr); }
+      .brand-card img { width: 96px; height: 96px; }
+      .brand-card-copy { padding-inline: 13px; }
+      .cityline { width: calc(100% - 28px); height: 56px; margin-top: 14px; }
+      .trust-row { display: grid; gap: 9px; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .audience-card { min-height: 0; }
+      .audience-card .service-number { margin-bottom: 22px; }
+      .readiness-panel { grid-template-columns: 1fr; gap: 10px; }
+      .credential-facts { grid-template-columns: 1fr; }
+      .credential-fact { min-height: 0; }
+      .training-row { grid-template-columns: 68px 1fr; gap: 12px; }
+      .about-visual { padding-right: 8px; max-width: 400px; }
+      .portrait-photo { width: 100%; }
+      .since-chip { left: -6px; }
+      .about-points { grid-template-columns: 1fr; }
+      .quote-form { grid-template-columns: 1fr; }
+      .field, .field.full { grid-column: 1; }
+      .form-actions { grid-column: 1; }
+      .form-actions .button { width: 100%; }
+      .form-status { grid-column: 1; }
+      .footer-inner { grid-template-columns: 58px minmax(0, 1fr); align-items: center; }
+      .footer-mark { width: 58px; height: 58px; }
+      .footer-email { grid-column: 1 / -1; }
+    }
+
+
+    /* ---- Multi-page views ---- */
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+    .nav-links a[aria-current="page"] { color: var(--accent-deep); }
+    .page-hero { position: relative; overflow: hidden; padding: clamp(52px, 7vw, 92px) 0 10px; }
+    .page-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 7px; background: linear-gradient(90deg, var(--silver-deep) 0 72%, var(--accent) 72% 100%); z-index: 3; }
+    .page-hero .hero-backdrop { height: 320px; }
+    .mission-line { max-width: 880px; margin: 0; color: var(--navy-2); font-family: var(--display); font-size: clamp(1.7rem, 3.4vw, 2.7rem); line-height: 1.3; font-weight: 400; }
+    .mission-line em { color: var(--accent-deep); font-style: normal; }
+    .situation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .situation-card { background: var(--card); overflow: hidden; }
+    .situation-card img { width: 100%; height: 190px; object-fit: cover; }
+    .situation-body { padding: 28px 30px 32px; }
+    .situation-body .service-number { display: block; margin-bottom: 14px; color: var(--accent-deep); font-size: .78rem; font-weight: 700; letter-spacing: .09em; }
+    .situation-body h3 { margin: 0; color: var(--navy-2); font-size: 1.35rem; line-height: 1.3; }
+    .situation-body p { margin: 12px 0 0; color: var(--muted); }
+    .situation-body ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: .9rem; }
+    .situation-body li + li { margin-top: 5px; }
+    .capability-band { margin-top: 34px; padding: 26px 28px; background: var(--band); color: #d3dfe8; }
+    .capability-band h3 { margin: 0 0 10px; color: #e3bb66; font-size: 1.15rem; }
+    .capability-band p { margin: 0; font-size: .94rem; line-height: 1.65; }
+    .capability-band p + p { margin-top: 10px; }
+    .area-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .area-card { background: var(--card); border: 1px solid var(--line); overflow: hidden; }
+    .area-card img { width: 100%; height: 230px; object-fit: cover; }
+    .area-body { padding: 26px 28px 30px; }
+    .area-body h3 { margin: 0; color: var(--navy-2); font-size: 1.3rem; }
+    .area-body p { margin: 12px 0 0; color: var(--muted); font-size: .96rem; }
+    .area-body .place-tag { margin-top: 18px; }
+    .timeline { margin-top: 30px; border-top: 1px solid var(--line); }
+    .timeline-row { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .timeline-row time { color: var(--accent-deep); font-size: .8rem; font-weight: 700; letter-spacing: .05em; }
+    .timeline-row p { margin: 0; color: var(--ink); font-size: .95rem; font-weight: 600; }
+    .timeline-row p span { color: var(--muted); font-weight: 400; }
+    .suggestions { margin-top: 40px; padding: 26px 28px; border: 1px solid var(--line); border-left: 4px solid var(--accent); background: var(--card); }
+    .suggestions h3 { margin: 0; color: var(--navy-2); font-size: 1.2rem; }
+    .suggestions p, .suggestions li { color: var(--muted); font-size: .95rem; }
+    .suggestions ul { margin: 10px 0 0; padding-left: 18px; }
+    .page-cta { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 6px; }
+    .footer-nav a { color: #cbd3d8; font-size: .8rem; font-weight: 600; text-decoration: none; }
+    .footer-nav a:hover { color: var(--accent-deep); }
+    .fee-list { border: 1px solid var(--line); background: var(--card); }
+    .fee-row { display: grid; grid-template-columns: minmax(200px, .9fr) minmax(0, 1.5fr) auto; gap: 14px 28px; align-items: baseline; padding: 22px 26px; }
+    .fee-row + .fee-row { border-top: 1px solid var(--line); }
+    .fee-row h3 { margin: 0; color: var(--navy-2); font-size: 1.12rem; line-height: 1.35; }
+    .fee-row h3 span { display: block; margin-top: 3px; color: var(--accent-deep); font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .fee-row p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .fee-price { color: var(--accent-deep); font-family: var(--display); font-size: 1.28rem; white-space: nowrap; }
+    .fee-subhead { margin: 52px 0 18px; color: var(--navy-2); font-size: 1.45rem; }
+    @media (max-width: 600px) {
+      .fee-row { grid-template-columns: 1fr; gap: 6px; padding: 20px 20px; }
+      .fee-price { white-space: normal; }
+    }
+    @media (max-width: 860px) {
+      .nav-links a:not(.nav-cta) { display: inline-flex; }
+      .site-nav { flex-wrap: wrap; padding-block: 10px; }
+      .nav-links { flex-wrap: wrap; gap: 10px 16px; }
+      .situation-grid, .area-grid { grid-template-columns: 1fr; }
+    }
+    
+    @media (max-width: 600px) {
+      .timeline-row { grid-template-columns: 92px 1fr; gap: 12px; }
+      .nav-copy span { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+    </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-context">
+      <img class="nav-logo" src="assets/hpa-logo-navy.webp" alt="High Power Appraisal navy and gold shield logo" width="1600" height="1600" />
+      <span class="nav-copy"><strong>High Power Appraisal</strong><span>Residential appraisals · Las Vegas</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#/home" data-nav="home">Home</a>
+      <a href="#/services" data-nav="services">Services</a>
+      <a href="#/lenders" data-nav="lenders">For Lenders &amp; AMCs</a>
+      <a href="#/area" data-nav="area">Service Area</a>
+      <a href="#/about" data-nav="about">About &amp; Credentials</a>
+      <a href="#/fees" data-nav="fees">Fees</a>
+      <a class="button nav-cta" href="#/quote">Get a fee quote</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+  <!-- ================= HOME ================= -->
+  <div class="page-view" data-page="home">
+    <section class="hero">
+      <div class="hero-backdrop" aria-hidden="true"><img src="assets/hero-home-curb-golden.webp" alt="" width="1920" height="1280" /></div>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Nevada Licensed Residential Appraiser · Las Vegas, North Las Vegas &amp; Henderson</p>
+          <h1>Know what the property is worth—and why.</h1>
+          <p class="hero-lede">Residential appraisals for lenders and AMCs, attorneys and CPAs, homeowners and agents across Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities — every report inspected, researched, and signed by the same local appraiser.</p>
+          <div class="hero-actions">
+            <a class="button" href="#/quote">Get a fee quote
+              <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="button secondary" href="#/services">Explore services</a>
+          </div>
+          <div class="trust-row" aria-label="Credentials and recognition">
+            <span>NV Licensed Residential Appraiser · A.0007067-RES</span>
+            <span>Solidifi Extraordinary Appraiser · 2024</span>
+            <span>UAD 3.6 trained &amp; ready</span>
+            <span>E&amp;O insured</span>
+            <span>Appraising since 2004</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="photo-frame">
+            <img src="assets/hero-strip-night.webp" alt="Tall aerial view down Las Vegas Boulevard at night, the full Strip glowing below" width="1152" height="2048" />
+            <figcaption class="photo-caption">The full Strip · seen from above</figcaption>
+          </figure>
+          <div class="brand-card" aria-label="High Power Appraisal brand">
+            <img src="assets/hpa-logo-navy.webp" alt="Navy HPA shield with gold scales balancing a house against coins and cash above the Las Vegas skyline" width="1600" height="1600" />
+            <div class="brand-card-copy">
+              <strong>High Power Appraisal</strong>
+              <span>Las Vegas residential valuation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cityline" aria-hidden="true">
+        <svg viewBox="0 0 1160 90" preserveAspectRatio="none">
+          <path d="M0 81H79V62h22V47h28v34h54V67h38V53h35v28h48V61h23V39h10V19h5V4h5v15h5v20h10v42h52V58h21V44h28v37h53V66h28V50h34v31h43V64h25c3-18 18-31 37-31s34 13 37 31h24v17h37V58h28V39h8V18h6V6h5v12h6v21h8v42h39V57h29v24h41V65h28V48h34v33h70V62h24V46h31v35H1160" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <path d="M749 64a37 37 0 1 0 74 0a37 37 0 1 0-74 0M786 27v74M749 64h74M760 38l52 52M812 38l-52 52" fill="none" stroke="currentColor" stroke-width="1.35" vector-effect="non-scaling-stroke"/>
+          <path d="M33 81 69 52l36 29M893 81l41-31 41 31M1015 81l34-27 34 27" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+    </section>
+
+    <aside class="transition-strip" aria-label="UAD 3.6 readiness">
+      <div class="wrap">
+        <div class="transition-mark">
+          <img class="transition-motif" src="assets/hpa-scales-motif.webp" alt="" width="1600" height="1600" />
+          <strong>UAD 3.6 transition-ready</strong>
+        </div>
+        <p>Inspection-workflow, new URAR, and ANSI Z765 measurement coursework are complete — helping lender and AMC partners move toward the new standard without adding avoidable transition risk to the pipeline. Current-form work remains fully operational in ACI today.</p>
+      </div>
+    </aside>
+
+    <section class="section section-rule" id="home-services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Who it serves</p>
+            <h2>One appraiser. Three doors in.</h2>
+          </div>
+          <p class="section-intro">Different clients need different things from an appraisal. Start with the door that fits — the services behind each one are themed by situation, not by form number.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card">
+            <span class="service-number">FOR LENDERS &amp; AMCs</span>
+            <h3>Panel-ready residential production</h3>
+            <p>Current-form production in ACI, flexible turnaround coordination, and documented preparation for the UAD 3.6 transition.</p>
+            <div class="page-cta"><a class="button secondary" href="#/lenders">For Lenders &amp; AMCs</a></div>
+          </article>
+          <article class="audience-card">
+            <span class="service-number">FOR ATTORNEYS &amp; CPAs</span>
+            <h3>Estate, divorce &amp; tax matters</h3>
+            <p>Retrospective date-of-death valuations, neutral divorce work, and tax-appeal support — scoped carefully and built to be defensible.</p>
+            <div class="page-cta"><a class="button secondary" href="#/services">See legal &amp; estate services</a></div>
+          </article>
+          <article class="audience-card">
+            <span class="service-number">FOR HOMEOWNERS &amp; AGENTS</span>
+            <h3>Decisions before the deal</h3>
+            <p>Pre-listing pricing, PMI removal, and pre-purchase valuations — an independent number before you commit to one.</p>
+            <div class="page-cta"><a class="button secondary" href="#/services">See homeowner services</a></div>
+          </article>
+          <article class="audience-card">
+            <span class="service-number">THE LOCAL EDGE</span>
+            <h3>Las Vegas, block by block</h3>
+            <p>A Las Vegas native appraising here since 2004 — from entry-level homes to custom estates, condos, vacant land, and REO across Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities.</p>
+            <div class="page-cta"><a class="button secondary" href="#/area">See the service area</a></div>
+          </article>
+        </div>
+        <div class="motif-rule" aria-hidden="true"><img src="assets/hpa-scales-motif.webp" alt="" width="1600" height="1600" /></div>
+      </div>
+    </section>
+
+    <section class="section process-band" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">A clear path</p>
+            <h2>From request to report.</h2>
+            <span class="place-tag">The whole valley · homes, the Strip, and mountain ranges</span>
+          </div>
+          <p class="section-intro">No generic package or one-size-fits-all promise. The assignment is defined around the property and its intended use.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <b>STEP 01</b>
+            <h3>Share the basics</h3>
+            <p>Property location, intended use, timing, and any known access or property details.</p>
+          </article>
+          <article class="step">
+            <b>STEP 02</b>
+            <h3>Confirm the assignment</h3>
+            <p>Scope, fee, timing, required documentation, and inspection needs are confirmed before engagement.</p>
+          </article>
+          <article class="step">
+            <b>STEP 03</b>
+            <h3>Complete the analysis</h3>
+            <p>The property and relevant market evidence are analyzed, then the agreed appraisal report is delivered.</p>
+          </article>
+        </div>
+        <figure class="process-figure">
+          <img src="assets/robert-avatar-measuring.webp" alt="Illustrated appraiser measuring a home's exterior wall lengthwise with a red handheld laser distance meter." width="1920" height="1280" />
+          <figcaption><strong>Measured on site, by hand.</strong>Every inspection includes careful exterior measurement and a working sketch — the groundwork the analysis stands on, done in person across the Las Vegas valley.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reviews-band" id="reviews">
+      <div class="wrap">
+        <div class="reviews-placeholder">
+          <div>
+            <p class="eyebrow">Client feedback</p>
+            <h2>Google reviews coming soon.</h2>
+            <span class="place-tag">Red Rock to the Strip · the valley at dusk</span>
+          </div>
+          <p>This space is reserved for verified client feedback as the High Power Appraisal Google Business Profile grows.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= SERVICES ================= -->
+  <div class="page-view" data-page="services">
+    <section class="page-hero">
+      <div class="hero-backdrop" aria-hidden="true"><img src="assets/strip-aerial-homes.webp" alt="" /></div>
+      <div class="wrap">
+        <p class="eyebrow">Services · themed by situation</p>
+        <h1>What do you need the number to do?</h1>
+        <p class="hero-lede">An appraisal is ordered for a reason. Each service below starts with that reason — who it is for, when the value date falls, and what the report has to hold up to. Scope and fee are confirmed before any assignment begins.</p>
+        <div class="hero-actions">
+          <a class="button" href="#/quote">Get a fee quote</a>
+          <a class="button secondary" href="#/about">About &amp; credentials</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="situation-grid">
+          <article class="situation-card">
+            <img src="assets/hero-strip-night.webp" alt="Las Vegas Strip at night above surrounding neighborhoods" />
+            <div class="situation-body">
+              <span class="service-number">01 · PURCHASE &amp; REFINANCE</span>
+              <h3>The lending decision</h3>
+              <p>The core of residential practice: a well-supported market value for a purchase or refinance, produced on current forms in ACI and delivered through your normal ordering channel.</p>
+              <ul><li>Single-family, condo, townhome, and new construction</li><li>Current-form production today; UAD 3.6 coursework complete</li><li>Ordered through lender and AMC panels — see For Lenders &amp; AMCs</li></ul>
+            </div>
+          </article>
+          <article class="situation-card">
+            <img src="assets/red-rock-homes.webp" alt="Homes below Red Rock cliffs at dusk" />
+            <div class="situation-body">
+              <span class="service-number">02 · ESTATE &amp; DATE-OF-DEATH</span>
+              <h3>Settling an estate</h3>
+              <p>When someone passes, the value that matters is often the value on the date of death — a retrospective appraisal that supports step-up in basis and estate filings, handled with care for the family and the file.</p>
+              <ul><li>Retrospective value as of the date of death</li><li>Support for estate and tax filings (Forms 706/709 context)</li><li>Works directly with executors, attorneys, and CPAs</li></ul>
+            </div>
+          </article>
+          <article class="situation-card">
+            <img src="assets/luxury-home-sunset.webp" alt="Las Vegas luxury home at sunset" />
+            <div class="situation-body">
+              <span class="service-number">03 · DIVORCE</span>
+              <h3>One neutral number</h3>
+              <p>In a divorce, the house is usually the largest shared asset — and the value has to be neutral, documented, and defensible for both sides, whether the date of value is current or retrospective.</p>
+              <ul><li>Independent, unbiased — engaged by either party or jointly</li><li>Current or retrospective dates of value</li><li>Clear documentation for settlement or court use</li></ul>
+            </div>
+          </article>
+          <article class="situation-card">
+            <img src="assets/valley-overview-dusk.webp" alt="Las Vegas valley overview at dusk" />
+            <div class="situation-body">
+              <span class="service-number">04 · TAX APPEAL / IRS</span>
+              <h3>Challenging an assessment</h3>
+              <p>If a Clark County assessment looks higher than the market supports, an independent appraisal gives your appeal evidence instead of opinion — built to USPAP standards and explained in plain language.</p>
+              <ul><li>Independent market evidence for assessment appeals</li><li>Clark County process context, including Board of Equalization filings</li><li>IRS-related valuation inquiries scoped case by case</li></ul>
+            </div>
+          </article>
+          <article class="situation-card">
+            <img src="assets/strip-aerial-homes.webp" alt="Aerial view of Las Vegas homes near the Strip" />
+            <div class="situation-body">
+              <span class="service-number">05 · PRE-LISTING &amp; PMI REMOVAL</span>
+              <h3>Before you list — or to drop PMI</h3>
+              <p>Price a listing on evidence instead of hope, or document the value needed to remove private mortgage insurance. Includes careful ANSI-standard measurement, so the living area in the report matches the house.</p>
+              <ul><li>Pre-listing and pre-purchase private valuations</li><li>PMI-removal documentation for your loan servicer</li><li>ANSI Z765 measurement — trained and current</li></ul>
+            </div>
+          </article>
+          <article class="situation-card">
+            <img src="assets/north-vegas-homes.webp" alt="North Las Vegas homes with the skyline in the distance" />
+            <div class="situation-body">
+              <span class="service-number">06 · REO &amp; RELOCATION</span>
+              <h3>Distressed and moving-fast work</h3>
+              <p>REO assignments and relocation-related valuations, where condition, market exposure, and timing all shape the number — and where local knowledge of each submarket does the heavy lifting.</p>
+              <ul><li>REO experience across Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities</li><li>Condition and marketability documented in the report</li><li>Vacant and hard-to-access properties scoped up front</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="capability-band">
+          <h3>Property types &amp; report forms — the capability detail</h3>
+          <p><strong>Property types:</strong> single-family homes from entry-level to custom and upper-tier, new construction, townhouses, condominiums, vacant residential land, and REO properties across Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities.</p>
+          <p><strong>Forms &amp; products:</strong> 1004 (URAR), 2055 exterior-only, 1073 condo, 1075 exterior condo, 1004D updates and completion reports, 1004MC market conditions, and 1007 / 216 rent schedule and income-and-expense statements. The form follows the assignment — tell us the situation on the quote page and the right product gets matched to it.</p>
+        </div>
+
+        <div class="page-cta">
+          <a class="button" href="#/quote">Get a fee quote for your situation</a>
+          <a class="button secondary" href="#/fees">See the fee schedule</a>
+          <a class="button secondary" href="#/area">Check the service area</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= FOR LENDERS & AMCs ================= -->
+  <div class="page-view" data-page="lenders">
+    <section class="page-hero">
+      <div class="hero-backdrop" aria-hidden="true"><img src="assets/strip-night-fountains.webp" alt="" /></div>
+      <div class="wrap">
+        <p class="eyebrow">For lenders &amp; AMCs</p>
+        <h1>Panel-ready. Local. Transition-trained.</h1>
+        <p class="hero-lede">A one-appraiser panel resource for Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities: the person who takes the order inspects the property, does the analysis, and signs the report. No handoffs, no trainees, no coverage gaps to manage.</p>
+        <div class="trust-row" aria-label="Panel credentials">
+          <span>NV Licensed Residential Appraiser · A.0007067-RES</span>
+          <span>Solidifi Extraordinary Appraiser · 2024</span>
+          <span>E&amp;O insured</span>
+          <span>UAD 3.6 trained</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Coverage &amp; capability</p>
+            <h2>What a panel reviewer needs to verify.</h2>
+          </div>
+          <p class="section-intro">Everything on this page is stated so it can be checked in two minutes: license, coverage, products, and transition readiness. Full credentials and continuing education are on the About &amp; Credentials page.</p>
+        </div>
+
+        <div class="credential-facts" aria-label="Lender and AMC facts">
+          <div class="credential-fact">
+            <b>Coverage — Incorporated Las Vegas Valley</b>
+            <span>Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities, scoped per assignment. See the Service Area page for detail.</span>
+          </div>
+          <div class="credential-fact">
+            <b>Forms fluency</b>
+            <span>1004, 2055, 1073, 1075, 1004D, 1004MC, 1007/216 — current-form production in ACI, fully operational today.</span>
+          </div>
+          <div class="credential-fact">
+            <b>UAD 3.6 readiness</b>
+            <span>New URAR guide, UAD 3.6 inspection workflow, and ANSI Z765 measurement coursework completed in 2026 — ahead of the mandate, not behind it.</span>
+          </div>
+          <div class="credential-fact">
+            <b>Turn time &amp; communication</b>
+            <span>Flexible turnaround coordination and direct status communication with the appraiser — one point of contact from order to delivery.</span>
+          </div>
+          <div class="credential-fact">
+            <b>E&amp;O insured</b>
+            <span>Current professional liability coverage in place. Certificate available on request during panel onboarding.</span>
+          </div>
+          <div class="credential-fact">
+            <b>Property range</b>
+            <span>Single-family and custom homes, condos, townhomes, new construction, vacant residential land, and REO.</span>
+          </div>
+        </div>
+
+        <div class="award-note">
+          <img src="assets/hpa-scales-motif.webp" alt="" width="1600" height="1600" />
+          <div>
+            <p class="award-kicker">Recognition · 2024</p>
+            <h3>Solidifi Extraordinary Appraiser</h3>
+            <p class="award-copy">Named a Solidifi Extraordinary Appraiser for 2024 — selected in the company's annual review of thousands of appraisers on its national panel, and recognized for quality, professionalism, partnership, consistent performance, and local-market expertise.</p>
+          </div>
+        </div>
+
+        <div class="readiness-panel" style="margin-top:30px;">
+          <strong>Adding High Power Appraisal to your panel</strong>
+          <p>Reach out by email with your onboarding requirements. License documentation, E&amp;O certificate, and coverage confirmation are provided during onboarding. Orders are accepted through your normal panel or portal process once onboarding is complete.</p>
+        </div>
+
+        <div class="page-cta">
+          <a class="button" href="mailto:hpappraisal@aol.com">Email hpappraisal@aol.com</a>
+          <a class="button secondary" href="#/about">Full credentials &amp; education</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= SERVICE AREA ================= -->
+  <div class="page-view" data-page="area">
+    <section class="page-hero">
+      <div class="hero-backdrop" aria-hidden="true"><img src="assets/strip-v4-night-fountains.webp" alt="" /></div>
+      <div class="wrap">
+        <p class="eyebrow">Service area</p>
+        <h1>The Las Vegas valley, covered by a native.</h1>
+        <p class="hero-lede">High Power Appraisal serves Clark County's incorporated valley communities: Las Vegas — including Summerlin, Lone Mountain, and the northwest valley — North Las Vegas, and Henderson — including Green Valley, Anthem, MacDonald Ranch, and Lake Las Vegas — along with the valley's unincorporated communities such as Spring Valley, Paradise, Enterprise, and Sunrise Manor. Geographic competency here is not a claim; it is a lifetime in this valley and two decades appraising it.</p>
+        <div class="hero-actions">
+          <a class="button" href="#/quote">Get a fee quote</a>
+          <a class="button secondary" href="#/services">Explore services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="area-grid">
+          <article class="area-card">
+            <img src="assets/red-rock-homes.webp" alt="West Las Vegas homes below the Red Rock cliffs" />
+            <div class="area-body">
+              <h3>Las Vegas &amp; the West Valley</h3>
+              <p>From downtown and the historic west side to Summerlin and the Red Rock foothills — master-planned communities, golf-course custom homes, older ranch neighborhoods, and everything between. The valley's widest range of housing stock lives here, and so does most of the custom and upper-tier work.</p>
+              <span class="place-tag">Red Rock country · west valley</span>
+            </div>
+          </article>
+          <article class="area-card">
+            <img src="assets/luxury-home-sunset.webp" alt="Henderson-area luxury home at sunset" />
+            <div class="area-body">
+              <h3>Henderson &amp; the South Valley</h3>
+              <p>Green Valley, Anthem, MacDonald Highlands, and the fast-growing south — a mix of established master plans, hillside custom homes, age-restricted communities, and new construction. Enterprise and Spring Valley round out the south and central valley coverage.</p>
+              <span class="place-tag">South valley · Henderson</span>
+            </div>
+          </article>
+          <article class="area-card">
+            <img src="assets/north-vegas-homes.webp" alt="North Las Vegas homes with Nellis mountains behind" />
+            <div class="area-body">
+              <h3>North Las Vegas &amp; the North Valley</h3>
+              <p>Aliante, Eldorado, and the growing north — newer subdivisions alongside older established neighborhoods, with Nellis and the Sheep Range as the backdrop. Value here turns on knowing which pockets were built when, and by whom.</p>
+              <span class="place-tag">North valley · Nellis side</span>
+            </div>
+          </article>
+          <article class="area-card">
+            <img src="assets/valley-overview-dusk.webp" alt="Las Vegas valley neighborhoods at dusk with the skyline in the distance" />
+            <div class="area-body">
+              <h3>Central &amp; East Valley</h3>
+              <p>Paradise, Sunrise Manor, Whitney, and the east side's established neighborhoods — a wide mix of housing ages and styles where value turns on the pocket, the condition, and what has actually sold nearby, not a valley-wide average.</p>
+              <span class="place-tag">Central &amp; east valley · Las Vegas</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="capability-band">
+          <h3>Coverage, stated plainly</h3>
+          <p>Service covers Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities. Service does not extend to Boulder City, Laughlin, Blue Diamond, or Nye County. If a property falls outside that coverage, you will be told that up front rather than finding out in review.</p>
+        </div>
+
+        <div class="page-cta">
+          <a class="button" href="#/quote">Ask about your property</a>
+          <a class="button secondary" href="#/about">Meet your appraiser</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ABOUT & CREDENTIALS ================= -->
+  <div class="page-view" data-page="about">
+    <section class="page-hero">
+      <div class="hero-backdrop" aria-hidden="true"><img src="assets/red-rock-dusk.webp" alt="" /></div>
+      <div class="wrap">
+        <p class="eyebrow">About &amp; credentials · the mission, in one line</p>
+        <p class="mission-line">Born and raised in Las Vegas, I know this market from the high end to the low end — <em>and every appraisal gets that local knowledge, a careful inspection, and a number I can defend.</em></p>
+        <div class="trust-row" aria-label="Credentials summary">
+          <span>NV Licensed Residential Appraiser · A.0007067-RES</span>
+          <span>Licensed since November 2006</span>
+          <span>Solidifi Extraordinary Appraiser · 2024</span>
+          <span>E&amp;O insured</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap about-grid">
+        <div class="about-visual">
+          <figure class="portrait-photo">
+            <img src="assets/robert-beatty.jpg" alt="Robert Beatty, owner of High Power Appraisal" width="1737" height="3088" />
+          </figure>
+          <p class="portrait-caption"><strong>Robert Beatty</strong>Owner, High Power Appraisal</p>
+          <div class="since-chip" aria-label="Appraising since 2004">
+            <span>Appraising since</span>
+            <strong>2004</strong>
+          </div>
+          <figure class="avatar-figure">
+            <img src="assets/robert-avatar-desk.webp" alt="Illustration of Robert Beatty at his appraisal desk, report in hand and comparables on the screens, the Las Vegas skyline glowing through the window behind him" width="1920" height="1280" />
+            <figcaption><strong>At the desk</strong>Report in hand, comps on the screens, the valley out the window.</figcaption>
+          </figure>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">The story</p>
+          <h2>Born here. Raised here. Working in this market for decades.</h2>
+          <p>Robert Beatty is a Las Vegas native who attended Valley High School, a Nevada Licensed Residential Appraiser, and owner of High Power Appraisal. He entered the profession in 2004 and has built long-term, ground-level knowledge of the Las Vegas residential market.</p>
+          <p>His experience spans a broad range of Las Vegas residential property — from entry-level housing to upper-tier and custom homes — along with new construction, townhouses, condominiums, vacant residential land, and REO work across Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities.</p>
+          <p>The approach remains direct: understand the intended use, define the assignment carefully, inspect and research the property, study the relevant market evidence, and communicate what the analysis supports.</p>
+
+          <div class="timeline" aria-label="Career timeline">
+            <div class="timeline-row">
+              <time>2003–2010</time>
+              <p>Elite Appraisal Group <span>· entered the profession; internship through licensure and beyond</span></p>
+            </div>
+            <div class="timeline-row">
+              <time>NOV 2006</time>
+              <p>Nevada Licensed Residential Appraiser <span>· license A.0007067-RES</span></p>
+            </div>
+            <div class="timeline-row">
+              <time>2010–2013</time>
+              <p>Las Vegas Analytics <span>· residential appraisal production</span></p>
+            </div>
+            <div class="timeline-row">
+              <time>2011–NOW</time>
+              <p>Owner, High Power Appraisal <span>· independent practice serving Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities</span></p>
+            </div>
+            <div class="timeline-row">
+              <time>2024</time>
+              <p>Solidifi Extraordinary Appraiser <span>· national panel recognition</span></p>
+            </div>
+          </div>
+
+          <div class="name-story">
+            <h3>The name has a personal root.</h3>
+            <p>“High Power” is a quiet nod to the Browning Hi-Power — the first pistol Robert ever fired with his father, a Marine. The reference stays in the name; the work stays focused on disciplined residential valuation.</p>
+          </div>
+          <div class="award-note">
+            <img src="assets/hpa-scales-motif.webp" alt="" width="1600" height="1600" />
+            <div>
+              <p class="award-kicker">National recognition · 2024</p>
+              <h3>Solidifi Extraordinary Appraiser</h3>
+              <p class="award-copy">In 2024, Robert was named a Solidifi Extraordinary Appraiser — selected in the company's annual review of thousands of appraisers on its national panel, and recognized for quality, professionalism, partnership, consistent performance, and local-market expertise.</p>
+            </div>
+          </div>
+          <div class="hometown-note">
+            <img src="assets/hpa-logo-silver.webp" alt="Silver and black alternate HPA shield" width="1600" height="1600" />
+            <p><strong>Las Vegas, beyond the market data.</strong> Robert is a longtime Raiders fan and season-ticket holder — one more personal thread in a life rooted in this city.</p>
+          </div>
+          <div class="about-points">
+            <div class="about-point">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m5 12 4 4L19 6"/></svg>
+              Nevada license A.0007067-RES
+            </div>
+            <div class="about-point">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m5 12 4 4L19 6"/></svg>
+              Licensed residential appraiser since 2006
+            </div>
+            <div class="about-point">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m5 12 4 4L19 6"/></svg>
+              High Power Appraisal owner since 2011
+            </div>
+            <div class="about-point">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m5 12 4 4L19 6"/></svg>
+              Incorporated Las Vegas valley market expertise
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section credentials-section" id="credentials-detail">
+      <div class="wrap credentials-grid">
+        <div class="credential-summary">
+          <p class="eyebrow">Credentials &amp; education</p>
+          <h2>Licensed, insured, and current on what's coming.</h2>
+          <p>Fully operational on current forms today, and trained ahead of the industry's transition to UAD 3.6 and the new URAR. The 2026 continuing education below is the most recent requirement cycle — completed, not pending.</p>
+          <span class="place-tag">West Valley · homes below Red Rock</span>
+        </div>
+        <div>
+          <div class="credential-facts" aria-label="Professional credentials">
+            <div class="credential-fact">
+              <b>Nevada Licensed Residential Appraiser</b>
+              <span>License A.0007067-RES · licensed since November 2006</span>
+            </div>
+            <div class="credential-fact">
+              <b>E&amp;O insured</b>
+              <span>Current professional liability coverage</span>
+            </div>
+            <div class="credential-fact">
+              <b>High Power Appraisal</b>
+              <span>Owner-operated since 2011 · serving Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities</span>
+            </div>
+            <div class="credential-fact">
+              <b>20+ years in the market</b>
+              <span>Las Vegas residential appraisal experience since 2004</span>
+            </div>
+          </div>
+          <div class="training-list" aria-label="2026 continuing education">
+            <div class="training-row">
+              <time datetime="2026-05">2026</time>
+              <p>National USPAP Continuing Education <span>· 7 hours</span></p>
+            </div>
+            <div class="training-row">
+              <time datetime="2026-04">2026</time>
+              <p>National Valuation Bias &amp; Fair Housing Laws and Regulations <span>· 7 hours</span></p>
+            </div>
+            <div class="training-row">
+              <time datetime="2026-04">2026</time>
+              <p>The Appraiser's Guide to the New URAR <span>· 7 hours</span></p>
+            </div>
+            <div class="training-row">
+              <time datetime="2026-05">2026</time>
+              <p>UAD 3.6: Inspection Workflow Wizardry <span>· 5 hours</span></p>
+            </div>
+            <div class="training-row">
+              <time datetime="2026-05">2026</time>
+              <p>Residential Property Measurement and ANSI Z765 <span>· 4 hours</span></p>
+            </div>
+            <div class="training-row">
+              <time datetime="2026-09">2026</time>
+              <p>NAR Code of Ethics and Fairhaven fair-housing training <span>· completed September 2026</span></p>
+            </div>
+          </div>
+          <div class="training-synopsis">
+            <h3>Training &amp; Education</h3>
+            <p>Robert Beatty has been a Nevada Licensed Residential Appraiser since November 2006, following a 75-hour foundational qualifying education program completed with the Chicopee Group in 2003. His current continuing education cycle is complete: 30 hours in 2026 covering the National USPAP Update, the UAD 3.6 appraisal workflow, the new URAR, ANSI Z765 residential measurement standards, and valuation bias and fair housing — supplemented by NAR Code of Ethics and Fairhaven fair-housing training, also completed in 2026. The course-by-course record is summarized above; the full detail is in the credentials packet.</p>
+            <div class="packet-actions">
+              <a class="button" href="assets/hpa-credentials-packet.pdf" download>
+                <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5M4 19h16"/></svg>
+                Download Full Credentials Packet (PDF)
+              </a>
+            </div>
+            <p class="packet-note">Full documentation, including insurance declarations, available on request.</p>
+          </div>
+          <div class="page-cta">
+            <a class="button" href="#/quote">Get a fee quote</a>
+            <a class="button secondary" href="#/lenders">For Lenders &amp; AMCs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= FEES ================= -->
+  <div class="page-view" data-page="fees">
+    <section class="page-hero">
+      <div class="hero-backdrop" aria-hidden="true"><img src="assets/valley-overview-dusk.webp" alt="" /></div>
+      <div class="wrap">
+        <p class="eyebrow">Fees · Private &amp; direct assignments</p>
+        <h1>Fees, stated up front.</h1>
+        <p class="hero-lede">This schedule covers private and direct assignments — the work ordered by homeowners, attorneys, CPAs, executors, and agents. Lender and AMC orders are billed through the lender or AMC under their own fee schedules, so they are not priced here.</p>
+        <div class="hero-actions">
+          <a class="button" href="#/quote">Get a fee quote</a>
+          <a class="button secondary" href="#/services">Explore services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Fee schedule</p>
+            <h2>Standard private assignments.</h2>
+          </div>
+          <p class="section-intro">Fees are based on the complexity and scope of the assignment — the property's size, condition, and location, and the time and work the assignment requires — never on the value of the property or the outcome of the appraisal. Your exact fee is quoted and confirmed in writing before work begins.</p>
+        </div>
+
+        <div class="fee-list" aria-label="Private assignment fee schedule">
+          <div class="fee-row">
+            <h3>Single-family appraisal <span>Form 1004 · Full interior</span></h3>
+            <p>A full interior inspection and appraisal of a single-family home — the standard report for purchase, refinance, pre-listing, and private decisions.</p>
+            <span class="fee-price">$450–$550</span>
+          </div>
+          <div class="fee-row">
+            <h3>1004 New Construction (plans &amp; specs)</h3>
+            <p>Built into the full 1004 appraisal — not an add-on. Covers the as-is value and, when the home is subject to completion per plans and specs, the initial plans-and-specs inspection with a completion percentage, plus the additional comparable support inside and outside the subdivision the assignment requires.</p>
+            <span class="fee-price">$500–$600</span>
+          </div>
+          <div class="fee-row">
+            <h3>Condominium appraisal <span>Form 1073 · Full interior</span></h3>
+            <p>A full interior inspection and appraisal of a condominium unit, including the project and common-area context the value depends on.</p>
+            <span class="fee-price">$450–$550</span>
+          </div>
+          <div class="fee-row">
+            <h3>Exterior-only appraisal <span>Form 2055 · Drive-by</span></h3>
+            <p>An exterior-only observation with a full market analysis — no interior access — for situations where a drive-by scope is appropriate.</p>
+            <span class="fee-price">$350–$400</span>
+          </div>
+          <div class="fee-row">
+            <h3>Condominium exterior-only <span>Form 1075 · Drive-by</span></h3>
+            <p>The exterior-only scope applied to a condominium unit — observed from outside, supported by the same market research.</p>
+            <span class="fee-price">$350–$400</span>
+          </div>
+          <div class="fee-row">
+            <h3>Private appraisal (GPAR) <span>Divorce · Probate &amp; estate</span></h3>
+            <p>Private work for divorce, probate and estate matters, and date-of-death valuations at a current date of value.</p>
+            <span class="fee-price">$300–$500</span>
+          </div>
+          <div class="fee-row">
+            <h3>GPAR — Retrospective (date-of-death &amp; probate)</h3>
+            <p>Quoted individually — a retrospective GPAR assignment where the value date falls in the past, with the added complexity that work requires.</p>
+            <span class="fee-price">from $550</span>
+          </div>
+        </div>
+
+        <h3 class="fee-subhead">Add-ons &amp; adjustments</h3>
+        <div class="fee-list" aria-label="Fee add-ons and adjustments">
+          <div class="fee-row">
+            <h3>REO addendum</h3>
+            <p>Added to the base fee when an REO assignment calls for the REO addendum and its additional analysis.</p>
+            <span class="fee-price">+$100–$150</span>
+          </div>
+          <div class="fee-row">
+            <h3>1007 Rent Schedule</h3>
+            <p>Added to the base fee when a rent schedule is required as part of the report.</p>
+            <span class="fee-price">+$100</span>
+          </div>
+          <div class="fee-row">
+            <h3>216 Operating Income Statement</h3>
+            <p>Added to the base fee when an operating income statement is required as part of the report.</p>
+            <span class="fee-price">+$100</span>
+          </div>
+          <div class="fee-row">
+            <h3>1007 + 216 Together (same report)</h3>
+            <p>When both the rent schedule and the operating income statement are included in the same report.</p>
+            <span class="fee-price">$150</span>
+          </div>
+          <div class="fee-row">
+            <h3>1004D Completion / Update (final inspection)</h3>
+            <p>A return visit at the end of the assignment to verify completion — photographs and the completion/update form so the loan can be signed off.</p>
+            <span class="fee-price">$100–$150</span>
+          </div>
+          <div class="fee-row">
+            <h3>Rush service</h3>
+            <p>When a deadline calls for an accelerated turnaround, a rush charge applies depending on how fast the report is needed.</p>
+            <span class="fee-price">+$100–$200</span>
+          </div>
+          <div class="fee-row">
+            <h3>Complexity</h3>
+            <p>Large, custom, acreage, unique design or characteristics — quoted per assignment, typically +$100–$200. Solar research is included in the standard fee — solar is not a complexity trigger and carries no separate premium.</p>
+            <span class="fee-price">typically +$100–$200</span>
+          </div>
+        </div>
+
+        <div class="capability-band">
+          <h3>How fees work here</h3>
+          <p><strong>Private work only:</strong> this schedule covers private and direct assignments. Lender and AMC orders are billed through the lender or AMC under their own fee schedules.</p>
+          <p>These are direct-engagement fees — no management company takes a percentage between you and your appraiser, so the fee you see is the fee the work is done for.</p>
+          <p>Fees are based on the complexity and scope of the assignment — the property's size, condition, and location, and the time and work the assignment requires — never on the value of the property or the outcome of the appraisal. Your exact fee is quoted and confirmed in writing before work begins.</p>
+          <p><strong>Service area:</strong> Clark County's incorporated valley communities — Las Vegas, North Las Vegas, and Henderson, including Green Valley, Anthem, MacDonald Ranch, and Lake Las Vegas.</p>
+          <p><strong>Not offered:</strong> FHA and VA appraisals are not offered and do not appear on this schedule.</p>
+          <p><strong>Engagement:</strong> private assignments are engaged under a written letter of engagement — <a href="assets/hpa-letter-of-engagement.pdf" download style="color:var(--accent-deep); font-weight:700; text-underline-offset:4px;">Letter of Engagement (PDF)</a>.</p>
+          <div class="packet-actions">
+            <a class="button" href="assets/hpa-fee-schedule.pdf" download>
+              <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5M4 19h16"/></svg>
+              Fee Schedule (PDF)
+            </a>
+          </div>
+        </div>
+
+        <div class="page-cta">
+          <a class="button" href="#/quote">Get a fee quote</a>
+          <a class="button secondary" href="#/services">See the services behind these fees</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= GET A FEE QUOTE / CONTACT ================= -->
+  <div class="page-view" data-page="quote">
+    <section class="section quote-section" id="quote">
+      <div class="wrap quote-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Get a fee quote · Contact</p>
+          <h2>Tell us about the property.</h2>
+          <p>A few details are enough to start: where the property is, what type it is, and — most important — the reason for the appraisal, so the scope and fee quote match the right service. This form prepares an email in your own email app; review it and send when ready. Submitting a quote request is not an accepted assignment — scope, fee, and timing are confirmed back to you first.</p>
+          <span class="place-tag">Las Vegas estates · desert homes at sunset</span>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:hpappraisal@aol.com">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg>
+              hpappraisal@aol.com
+            </a>
+            <span class="contact-link" style="text-decoration:none;">
+              <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              Las Vegas, North Las Vegas, Henderson, and the surrounding incorporated valley communities, Nevada
+            </span>
+          </div>
+          <div class="packet-actions">
+            <a class="button secondary" href="assets/hpa-letter-of-engagement.pdf" download>
+              <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5M4 19h16"/></svg>
+              Letter of Engagement (PDF)
+            </a>
+          </div>
+          <p class="packet-note">Private assignments are engaged under this letter — signed letter and deposit start the work.</p>
+          <figure class="door-figure">
+            <img src="assets/robert-avatar-front-door.webp" alt="Illustration of Robert Beatty at a home's front door at dusk, tablet with a floor plan in hand, the Las Vegas skyline glowing behind him" width="1280" height="1920" />
+            <figcaption><strong>At the door, in person</strong>Inspections scheduled and completed locally — no handoffs, no call centers.</figcaption>
+          </figure>
+        </div>
+
+        <form class="quote-form" id="quote-form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span style="color:var(--muted); font-weight:400;">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="who">I am a</label>
+            <select id="who" name="who">
+              <option value="">Choose one</option>
+              <option>Homeowner</option>
+              <option>Buyer or seller</option>
+              <option>Real estate agent</option>
+              <option>Attorney or CPA</option>
+              <option>Lender or AMC</option>
+              <option>Executor or fiduciary</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="property">Property address</label>
+            <input id="property" name="property" autocomplete="street-address" placeholder="Street address, city, ZIP — or neighborhood if the address is not final" required />
+          </div>
+          <div class="field">
+            <label for="proptype">Property type</label>
+            <select id="proptype" name="proptype" required>
+              <option value="">Choose one</option>
+              <option>Single-family home</option>
+              <option>Custom / upper-tier home</option>
+              <option>Condominium</option>
+              <option>Townhouse</option>
+              <option>New construction</option>
+              <option>Vacant residential land</option>
+              <option>REO / distressed</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="purpose">Reason for the appraisal</label>
+            <select id="purpose" name="purpose" required>
+              <option value="">Choose one</option>
+              <option>Purchase</option>
+              <option>Refinance</option>
+              <option>Estate / date of death</option>
+              <option>Divorce</option>
+              <option>Tax appeal / IRS</option>
+              <option>Pre-listing</option>
+              <option>PMI removal</option>
+              <option>REO / relocation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="timing">Timing</label>
+            <input id="timing" name="timing" placeholder="When do you need it? Any deadlines — closing, filing, hearing?" />
+          </div>
+          <div class="field full">
+            <label for="details">Comments — property details or questions</label>
+            <textarea id="details" name="details" placeholder="Access details, condition notes, intended use, date-of-death or other retrospective date if relevant, or anything else that may help."></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="button" type="submit">Open email draft
+              <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <p class="form-note">Nothing is sent automatically and nothing is stored. Your email app will open with these details addressed to hpappraisal@aol.com.</p>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="suggestions">
+          <h3>Two ways to handle the last open items — your call when you review</h3>
+          <p>These are the only structural choices left open, and both work either way:</p>
+          <ul>
+            <li><strong>Option A — as built:</strong> keep the six views as they are now — Home, Services, For Lenders &amp; AMCs, Service Area, About &amp; Credentials, and Get a Fee Quote — with the quote form as its own page. Simple, and every audience lands on its own page.</li>
+            <li><strong>Option B:</strong> when your own domain is connected, split these views into separate pages (services.html, lenders.html, and so on) with the same content — better for search engines finding “estate appraisal Las Vegas” or “divorce appraisal Las Vegas” on their own pages, at the cost of a little more upkeep.</li>
+            <li><strong>Also open:</strong> a public business phone number. The quote page currently runs on email only; adding a click-to-call number is a two-minute change once you pick which number is public.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img class="footer-mark" src="assets/hpa-logo-navy.webp" alt="High Power Appraisal navy and gold shield logo" width="1600" height="1600" />
+      <div class="footer-copy">
+        <p>© 2026 High Power Appraisal</p>
+        <p>Robert Beatty · Nevada Licensed Residential Appraiser · License A.0007067-RES · E&amp;O insured</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#/home">Home</a>
+          <a href="#/services">Services</a>
+          <a href="#/lenders">For Lenders &amp; AMCs</a>
+          <a href="#/area">Service Area</a>
+          <a href="#/about">About &amp; Credentials</a>
+          <a href="#/fees">Fees</a>
+          <a href="#/quote">Get a Fee Quote</a>
+        </nav>
+      </div>
+      <p class="footer-email"><a href="mailto:hpappraisal@aol.com">hpappraisal@aol.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var pages = ['home', 'services', 'lenders', 'area', 'about', 'fees', 'quote'];
+      var titles = {
+        home: 'High Power Appraisal — Las Vegas Residential Appraiser',
+        services: 'Services — High Power Appraisal, Las Vegas',
+        lenders: 'For Lenders & AMCs — High Power Appraisal',
+        area: 'Service Area — High Power Appraisal, Las Vegas Valley',
+        about: 'About & Credentials — High Power Appraisal',
+        fees: 'Fees — High Power Appraisal, Las Vegas',
+        quote: 'Get a Fee Quote — High Power Appraisal'
+      };
+
+      function currentPage() {
+        var hash = window.location.hash.replace(/^#\/?/, '').split('?')[0];
+        return pages.indexOf(hash) !== -1 ? hash : 'home';
+      }
+
+      function render() {
+        var page = currentPage();
+        var views = document.querySelectorAll('.page-view');
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.toggle('active', views[i].getAttribute('data-page') === page);
+        }
+        var links = document.querySelectorAll('[data-nav]');
+        for (var j = 0; j < links.length; j++) {
+          if (links[j].getAttribute('data-nav') === page) {
+            links[j].setAttribute('aria-current', 'page');
+          } else {
+            links[j].removeAttribute('aria-current');
+          }
+        }
+        document.title = titles[page];
+        window.scrollTo(0, 0);
+      }
+
+      window.addEventListener('hashchange', render);
+      render();
+
+      var form = document.getElementById('quote-form');
+      var status = document.getElementById('form-status');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          status.textContent = 'Please complete your name, email, property address, property type, and reason for the appraisal.';
+          var firstInvalid = form.querySelector(':invalid');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        status.textContent = '';
+        var data = new FormData(form);
+        var subject = 'Fee quote request — ' + data.get('property');
+        var body = [
+          'Name: ' + data.get('name'),
+          'Email: ' + data.get('email'),
+          'Phone: ' + (data.get('phone') || 'Not provided'),
+          'I am a: ' + (data.get('who') || 'Not specified'),
+          '',
+          'Property: ' + data.get('property'),
+          'Property type: ' + data.get('proptype'),
+          'Reason for appraisal: ' + data.get('purpose'),
+          'Timing: ' + (data.get('timing') || 'Not specified'),
+          '',
+          'Comments / property details:',
+          data.get('details') || 'None provided'
+        ].join('\n');
+
+        window.location.href = 'mailto:hpappraisal@aol.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    }());
+  </script>
+</body>
+</html>
